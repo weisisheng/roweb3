@@ -1,10 +1,10 @@
 ---
-title: Accessing GrahpQL from R
+title: Accessing GraphQL from R
 author:
   - Dennis Irorere
   - Scott Chamberlain
 date: '2020-12-08'
-slug: accessing-grahpql-in-r
+slug: accessing-graphql-in-r
 categories:
   - blog
 tags:
@@ -22,18 +22,17 @@ output:
     keep_md: yes
 ---
 ### Introduction
-Few months ago, I embarked on a full stack spatial data project at work. The project kicked off amazingly, until I was almost backed to the wall when I discovered that some of the data sources were served via a GraphQL API. Before now, I haven't worked with GraphQL. But, I have heard a lot about it and how amazing it is for querying data. 
-
+A few months ago, I embarked on a full stack spatial data project at work. The project kicked off amazingly, until I was almost backed to the wall when I discovered that some of the data sources were served via a GraphQL API. Before now, I haven't worked with GraphQL. But, I have heard a lot about it and how amazing it is for querying data. f
 GraphQL is a query language for application programming interfaces (APIs) that prioritizes giving clients exactly the data they request. It's designed to make APIs flexible, fast and friendly. Basically, it is used to load data from a server to a client and it does this in a much more efficient manner than traditional methods and services.
 
-I started off installing the [GraphQL playground](https://www.graphqlbin.com/v2/new), which is now my go to tool to interact with GraphQL API and it offers a great workflow to understand the schema and structure of any GraphQL API. I recommend you try it out.
+I started off installing the [GraphQL playground](https://www.graphqlbin.com/v2/new), which is now my go-to tool to interact with GraphQL API and it offers a great workflow to understand the schema and structure of any GraphQL API. I recommend you try it out.
 
 After hours of trying out the GraphQL playground, I finally understood the schema of the GraphQL API endpoint for the project I'm working on. Well, that was the easy part I must say. 
 
 Now that I can query the API, everything should seem great. Right? Well, it's not. Why? Well, the GraphQL API I was working with fetches the geospatial data as json file instead of geojson. Probably, because of my lack of understanding of how GraphQL truly worked with spatial data. The issue now is, I can see my data. But, just not in the format that I can work with. I am tempted to talk about the technicality behind it, but I won't... maybe another time. 
 
 ### How did I find out about ghql?
-At work, our scripting language of choice is R. R is a free software environment for statistical computing and graphics. Well, that's how it's officially defined. But, trust me its gradually evolving to do more than statistical computing and making of beautiful graphics. It was time for me to programmatically access data with GraphQL API from R. I felt excited because, I'm an R lover. But, I knew it was a going to be a huge work, I guess I was ready for the huge work. 
+At work, our scripting language of choice is R. R is a free software environment for statistical computing and graphics. Well, that's how it's officially defined. But, trust me, it's gradually evolving to do more than statistical computing and making of beautiful graphics. It was time for me to programmatically access data with GraphQL API from R. I felt excited because, I'm an R lover. But, I knew it was going to be a huge amount of work, I guess I was ready for it. 
 
 After spending days researching about the R packages that can interact with a GraphQL API, I found three packages. I picked `ghql` over the others because, it was an rOpenSci package.
 
